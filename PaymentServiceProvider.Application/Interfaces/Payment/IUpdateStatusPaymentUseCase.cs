@@ -2,6 +2,6 @@
 
 namespace PaymentServiceProvider.Application.Interfaces.Transaction;
 
-public interface ICreateTransactionUseCase : IUseCase<Guid, TransactionDto>
+public interface IUpdateStatusPaymentUseCase : IUseCase<object?, UpdateStatusPaymentDto>
 {
 }
