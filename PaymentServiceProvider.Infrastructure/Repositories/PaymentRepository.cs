@@ -7,6 +7,11 @@ namespace PaymentServiceProvider.Infrastructure.Repositories;
 public class PaymentRepository(PaymentContext context) : IPaymentRepository
 {
     private readonly PaymentContext _context = context;
+    public void Create(Payment payment)
+    {
+        _context.Payment.Add(payment);
+        _context.SaveChanges();
+    }
 
     public void Update(Payment payment)
     {

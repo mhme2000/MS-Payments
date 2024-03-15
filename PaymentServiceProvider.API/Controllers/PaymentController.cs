@@ -17,4 +17,10 @@ public class PaymentController(IUpdateStatusPaymentUseCase updateStatusPaymentUs
         if (result == null) return NotFound();
         return NoContent();
     }
+
+    [HttpGet("health")]
+    public IActionResult Health()
+    {
+        return Ok(DateTime.Now);
+    }
 }
