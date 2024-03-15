@@ -2,12 +2,13 @@
 
 public class Payment : Entity
 {
-    public Payment(double amount, string description, PaymentMethod paymentMethod, Guid orderId)
+    public Payment(double amount, string? description, PaymentMethod paymentMethod, Guid orderId)
     {
         Id = Guid.NewGuid();
         Amount = amount;
-        Description = description;
+        Description = description ?? "Descrição vazia";
         PaymentMethod = paymentMethod;
+        PaymentStatus = PaymentStatus.AguardandoPagamento;
         OrderId = orderId;
     }
 
