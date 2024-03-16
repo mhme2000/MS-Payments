@@ -1,9 +1,9 @@
 <h1 align="center">
-   Payment Service Provider 
+   MS-Payments 
 </h1>
 
 <h4 align="center"> 
-	🚧  Payment Service Provider 🚧 MVP concluído ... 🚧 🚀
+	🚧  MS-Payments 🚧 MVP concluído ... 🚧 🚀
 </h4>
 
 <p align="center">
@@ -16,35 +16,27 @@
 
 ## 💻 Sobre o projeto
 
-Payment Service Provider em .NET 7. Projeto voltado para exercitar conceitos como arquitetura de soluções e docker.
+MS-Payments em .NET 8. Projeto que compõe o serviço de eccomerce desenvolvido no trabalho de conclusão de curso da pós tech da FIAP.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- [x] Criar uma transação
-- [x] Listar transações
-- [x] Listar saldo disponível e saldo retido
-- [X] Permitir transações parceladas
-- [ ] Criar testes unitários para a camada de Repositório
-- [ ] Criar testes unitários para a camada de Casos de Uso
-- [ ] Criar testes unitários para a camada de Controladores
-- [ ] Criar entidade usuário e vincular as transações
-- [ ] Adicionar autenticação JWT
-- [X] Incluir sonarcloud no projeto 
-- [ ] Configurar pipeline via github actions
-
+- [x] Criar uma transação de pagamento;
+- [ ] Alterar o status da transação de pagamento;
+- [x] Consumer do rabbitmq para para uma fila de aguardando pagamento;
+- [x] Producer do rabbitmq para duas filas de atualização de status: pedido pago e pedido cancelado.
 ---
 
 ## 💻 Como executar
 
 - Pré requisitos
   - Docker;
-  - SDK .NET 7.0 (caso queira debugar);
+  - SDK .NET 8.0 (caso queira debugar);
 
-- Clone o projeto com: `git clone https://github.com/mhme2000/PaymentServiceProvider.git`
+- Clone o projeto com: `git clone https://github.com/mhme2000/Payments.git`
 - Acesse o projeto, e execute: `docker compose up --build -d`
-- Pronto! Agora é só se divertir!
+- Pronto! Agora seu projeto está rodando no endereço http://localhost:7001/swagger, é só se divertir!
 
 ---
 
