@@ -22,7 +22,7 @@ public class UpdateStatusPaymentUseCase(IPaymentRepository paymentRepository) : 
             payment.UpdateStatus(dto.Status);
             _paymentRepository.Update(payment);
             if (itemsForPublishMessage.Contains(dto.Status))
-                RabbitProducer.PublishMessage(new { dto.OrderId, Email = "teste@teste.com" }, dto.Status);
+                RabbitProducer.PublishMessage(new { dto.OrderId, CustomerId = new Guid("ff4b029e-3460-4708-82dd-773e83b3bf1e") }, dto.Status);
             scope.Complete();
             return new object();
         }

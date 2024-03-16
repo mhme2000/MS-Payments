@@ -5,16 +5,18 @@ services:
     hostname: api
     depends_on:
       - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "7000:80"
+      - "7001:8080"
   db: # Banco de dados
     hostname: db
     image: postgres
     command: postgres -c log_min_messages=FATAL
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: psp
-      POSTGRES_DB: PaymentServiceProvider
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: payment
     ports:
       - "5432:5432"
     volumes:
