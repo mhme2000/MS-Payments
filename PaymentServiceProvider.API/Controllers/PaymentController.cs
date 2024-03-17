@@ -6,10 +6,19 @@ namespace PaymentServiceProvider.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PaymentController(IUpdateStatusPaymentUseCase updateStatusPaymentUseCase, ICreateTransactionUseCase createTransactionUseCase) : ControllerBase
+public class PaymentController(IUpdateStatusPaymentUseCase updateStatusPaymentUseCase, ICreateTransactionUseCase createTransactionUseCase, IGetPaymentByOrderIdUseCase getPaymentByOrderIdUseCase) : ControllerBase
 {
     private readonly IUpdateStatusPaymentUseCase _updateStatusPaymentUseCase = updateStatusPaymentUseCase;
     private readonly ICreateTransactionUseCase _createTransactionUseCase = createTransactionUseCase;
+    private readonly IGetPaymentByOrderIdUseCase _getPaymentByOrderIdUseCase = getPaymentByOrderIdUseCase;
+
+    [HttpGet("findByOrderId")]
+    public IActionResult GetPaymentByOrderId([FromQuery] Guid orderId)
+    {
+        var result = _getPaymentByOrderIdUseCase.Execute(orderId);
+        if (result == null) return NotFound();
+        return Ok(result);
+    }
 
     [HttpPatch]
     public IActionResult UpdateStatusPayment([FromBody] UpdateStatusPaymentDto dto)

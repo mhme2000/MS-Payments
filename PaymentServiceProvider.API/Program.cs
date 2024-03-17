@@ -12,6 +12,7 @@ builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 builder.Services.AddScoped<IUpdateStatusPaymentUseCase, UpdateStatusPaymentUseCase>();
 builder.Services.AddScoped<ICreateTransactionUseCase, CreateTransactionUseCase>();
+builder.Services.AddScoped<IGetPaymentByOrderIdUseCase, GetPaymentByOrderIdUseCase>();
 
 builder.Services.AddDbContext<PaymentContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

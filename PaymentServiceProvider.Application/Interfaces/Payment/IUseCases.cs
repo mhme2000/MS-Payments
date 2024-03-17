@@ -8,3 +8,7 @@ public interface IUpdateStatusPaymentUseCase : IUseCase<object?, UpdateStatusPay
 public interface ICreateTransactionUseCase : IUseCase<object?, ConsumerModel>
 {
 }
+
+public interface IGetPaymentByOrderIdUseCase : IUseCase<object?, Guid>
+{
+}
