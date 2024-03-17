@@ -23,7 +23,7 @@ MS-Payments em .NET 8. Projeto que compõe o serviço de eccomerce desenvolvido 
 ## ⚙️ Funcionalidades
 
 - [x] Criar uma transação de pagamento;
-- [ ] Alterar o status da transação de pagamento;
+- [x] Alterar o status da transação de pagamento;
 - [x] Consumer do rabbitmq para para uma fila de aguardando pagamento;
 - [x] Producer do rabbitmq para duas filas de atualização de status: pedido pago e pedido cancelado.
 ---
